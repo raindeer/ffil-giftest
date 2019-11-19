@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="GifTest.ImagePage">
+
+    <!-- An animated gif keeps the page alive (leak) -->
+    <ffimage:CachedImage
+        x:Name="ImageView"
+        Source="https://media1.giphy.com/media/xUPGcfbMG6a2k2z57O/source.gif"
+        />
+
+    <!-- A normal image doesnt keep the page alive -->
+    <!--
+    <ffimage:CachedImage
+        x:Name="ImageView"
+        Source="https://i0.wp.com/metro.co.uk/wp-content/uploads/2019/10/PRI_89978732.jpg"
+        />
+    -->
+
+</ContentPage>
