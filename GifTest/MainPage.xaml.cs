@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FFImageLoading.Cache;
+using FFImageLoading.Forms;
 using Xamarin.Forms;
 
 namespace GifTest
@@ -33,12 +35,22 @@ namespace GifTest
             if (ImagePage.wr != null)
             { 
                 GC.Collect();
-                Console.WriteLine("Is the page object still alive? " + ImagePage.wr.IsAlive);
+                var status = "Is the page object still alive? " + ImagePage.wr.IsAlive;
+                Console.WriteLine(status);
+                StatusLabel.Text = status;
             }
             else
             {
-                Console.WriteLine("Open ImagePage once first");
+                var status = "Open ImagePage once first";
+                Console.WriteLine(status);
+                StatusLabel.Text = status;
             }
+        }
+
+        private void ClearCacheButton_Clicked(object sender, EventArgs e)
+        {
+            Console.WriteLine("Invalidating cached gif");
+            CachedImage.InvalidateCache(ImagePage.gifUrl, CacheType.All, true);
         }
     }
 }

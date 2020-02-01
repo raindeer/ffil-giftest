@@ -9,18 +9,23 @@
     <StackLayout>
         <!-- Place new controls here -->
         <Label
-            Text="Welcome to Xamarin.Forms!"
+            x:Name="StatusLabel"
+            Text="Open page, close it and then check if it is alive."
             HorizontalOptions="Center"
             VerticalOptions="CenterAndExpand" />
 
-        <Button x:Name="CheckAliveButton"
-                Text="Check if alive"
-                Clicked="CheckAliveButton_Clicked"
-                />
         <Button x:Name="OpenPageButton"
-                Text="Open image page"
+                Text="1. Open image page"
                 Clicked="OpenPageButton_Clicked"
                 />
 
+        <Button x:Name="CheckAliveButton"
+                Text="2. Check if alive"
+                Clicked="CheckAliveButton_Clicked"
+                />
+        <Button x:Name="ClearCacheButton"
+                Text="3. Clear cache"
+                Clicked="ClearCacheButton_Clicked"
+                />
     </StackLayout>
 </ContentPage>
